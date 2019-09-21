@@ -1,0 +1,7 @@
+---
+- name: "Docker Installation"
+  roles:
+  - role: geerlingguy.docker
+    vars:
+      docker_edition: 'ce'
+        

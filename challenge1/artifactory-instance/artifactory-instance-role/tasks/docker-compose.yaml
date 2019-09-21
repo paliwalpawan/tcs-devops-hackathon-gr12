@@ -1,0 +1,4 @@
+---
+- name: "Docker Compose Installation"
+  roles:
+  - role: andrewrothstein.docker-compose
