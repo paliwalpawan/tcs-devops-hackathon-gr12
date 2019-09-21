@@ -4,8 +4,8 @@
   include: create-work-dir.yaml
 #- name: "Install Docker"
 #  include: docker-install.yaml
-#- name: "Install Docker Compose"
-#  include: docker-compose.yaml
+- name: "Install Docker Compose"
+  include: docker-compose.yaml
 - name: "copy docker compose file"
   include: copy-docker-compose.yaml
 - name: "copy nexus service file"
