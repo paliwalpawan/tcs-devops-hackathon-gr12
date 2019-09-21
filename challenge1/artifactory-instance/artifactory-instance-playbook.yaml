@@ -20,3 +20,5 @@
       docker_compose_destination: /work/
       nexus_service_source: nexus.service
       nexus_service_destination: /etc/systemd/system/
+      start_nexus_script_source: start-nexus.sh
+      start_nexus_script_destination: /etc/systemd/system/
