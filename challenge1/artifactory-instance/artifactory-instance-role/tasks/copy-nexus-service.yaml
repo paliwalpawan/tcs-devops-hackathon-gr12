@@ -4,3 +4,9 @@
     src: "{{nexus_service_source}}"
     dest: "{{nexus_service_destination}}"
     mode: 0664
+    
+- name: "copy start-nexus script to target"
+  copy:
+    src: "{{start_nexus_script_source}}"
+    dest: "{{start_nexus_script_destination}}"
+    mode: '+x'
