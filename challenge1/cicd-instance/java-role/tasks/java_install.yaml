@@ -3,4 +3,7 @@
   yum: 
      name:  java-1.8.0-openjdk-devel
      state: latest
+     
+ - name: Install maven
+   shell: yum install maven
   
