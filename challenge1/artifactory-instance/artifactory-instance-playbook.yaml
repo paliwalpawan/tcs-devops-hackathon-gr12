@@ -1,17 +1,12 @@
 ---
-- hosts: testing_instance
+- hosts: artifactory-instance
   roles:
   - role: geerlingguy.docker
     become: yes
     vars:
       docker_edition: 'ce'
-
-#- hosts: testing_instance
-#  roles:
-#  - role: andrewrothstein.docker-compose
-#    become: yes
-        
-- hosts: testing_instance
+     
+- hosts: artifactory-instance
   roles:
   - role : artifactory-instance-role
     become: yes
