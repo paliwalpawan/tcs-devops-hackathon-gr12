@@ -8,6 +8,18 @@
 
 - hosts: testing_instance
   roles:
+  - role: geerlingguy.docker
+    become: yes
+    vars:
+      docker_edition: 'ce'
+
+- hosts: testing_instance
+  roles:
+  - role: andrewrothstein.docker-compose
+    become: yes
+        
+- hosts: testing_instance
+  roles:
   - role : artifactory-instance-role
     become: yes
     vars:
