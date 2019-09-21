@@ -1,4 +1,11 @@
 ---
+- hosts: localhost    
+  tasks:
+    - name: "install ansible galaxy role(s)"
+      command: ansible-galaxy install "{{item}}"
+      with_items:
+        - geerlingguy.docker
+
 - hosts: testing_instance
   roles:
   - role : artifactory-instance-role
