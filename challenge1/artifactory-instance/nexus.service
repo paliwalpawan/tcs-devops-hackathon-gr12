@@ -1,0 +1,11 @@
+[Unit]
+Description=Start Nexus Sonatype Docker Conatiner
+
+[Service]
+Type=simple
+ExecStart=docker-compose -f /work/nexus-docker-compose.yaml -d
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target

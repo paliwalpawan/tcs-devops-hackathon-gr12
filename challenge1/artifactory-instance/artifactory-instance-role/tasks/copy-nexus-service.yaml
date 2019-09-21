@@ -1,0 +1,6 @@
+---
+- name: "copy nexus service file to target"
+  copy:
+    src: "{{nexus_service_source}}"
+    dest: "{{nexus_service_destination}}"
+    mode: 0664
