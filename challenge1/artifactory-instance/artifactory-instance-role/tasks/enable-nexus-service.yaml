@@ -3,4 +3,4 @@
     state: started
     daemon_reload: yes
     enabled: yes
-    name: nexus
+    name: nexus.service

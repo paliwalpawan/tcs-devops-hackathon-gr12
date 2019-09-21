@@ -16,7 +16,7 @@
   - role : artifactory-instance-role
     become: yes
     vars:
-      docker_compose_source: /root/arghya/nexus-docker-compose.yaml
+      docker_compose_source: nexus-docker-compose.yaml
       docker_compose_destination: /work/
-      nexus_service_source: /root/arghya/nexus.service
+      nexus_service_source: nexus.service
       nexus_service_destination: /etc/systemd/system/
