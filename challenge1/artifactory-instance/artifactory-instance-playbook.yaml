@@ -5,6 +5,7 @@
       command: ansible-galaxy install "{{item}}"
       with_items:
         - geerlingguy.docker
+        - andrewrothstein.docker-compose
 
 - hosts: testing_instance
   roles:
