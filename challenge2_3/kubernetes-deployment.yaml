@@ -15,7 +15,7 @@ spec:
       - name: regcred
       containers:
         - name: eureka-server
-          image: eureka-server
+          image: 35.202.21.173:8083/eureka-server
           ports:
             - containerPort: 8761
               protocol: TCP
