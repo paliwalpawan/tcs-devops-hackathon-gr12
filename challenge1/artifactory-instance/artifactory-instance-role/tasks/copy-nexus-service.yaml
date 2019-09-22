@@ -10,3 +10,9 @@
     src: "{{start_nexus_script_source}}"
     dest: "{{start_nexus_script_destination}}"
     mode: '+x'
+
+- name: "copy stop-nexus script to target"
+  copy:
+    src: "{{stop_nexus_script_source}}"
+    dest: "{{stop_nexus_script_destination}}"
+    mode: '+x'
