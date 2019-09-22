@@ -4,7 +4,7 @@ data:
 kind: Secret
 metadata:
   creationTimestamp: "2019-09-22T19:18:34Z"
-  name: regcred2
+  name: regcred3
   namespace: default
   resourceVersion: "274817"
   selfLink: /api/v1/namespaces/default/secrets/regcred1
@@ -27,10 +27,10 @@ spec:
       nodeSelector:
         eureka: yes
       imagePullSecrets:
-      - name: regcred1
+      - name: regcred3
       containers:
         - name: eureka-server
-          image: 35.202.21.173:8083/eureka-server
+          image: 35.202.21.173:8082/eureka-server
           ports:
             - containerPort: 8761
               protocol: TCP
