@@ -1,2 +1,2 @@
 #!/bin/bash
-docker-compose /work/nexus-docker-compose.yaml down
+docker-compose -f /work/nexus-docker-compose.yaml down
