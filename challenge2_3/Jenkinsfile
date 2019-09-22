@@ -101,6 +101,8 @@ node('master') {
 			try {
 				withEnv(["kubernetesNamespace=$kubernetesNamespace", "gkeProjectId=$gkeProjectId", "gkeClusterName=$gkeClusterName", "gkeProjectZone=$gkeProjectZone" ]) {
 					// Deploy docker image to kubernetes cluster
+					sh "sed 's/BUILD_NUMBER/${BUILD_NUMBER}/g' ${WORKSPACE}/challenge2_3/kubernetes-deployment.yaml > ${WORKSPACE}/challenge2_3/kubernetes-deployment-copy.yaml"
+					sh "mv ${WORKSPACE}/challenge2_3/kubernetes-deployment-copy.yaml ${WORKSPACE}/challenge2_3/kubernetes-deployment.yaml"
 					step([$class: 'KubernetesEngineBuilder',namespace: "$kubernetesNamespace" , projectId: "$gkeProjectId" , clusterName: "$gkeClusterName" , zone: "$gkeProjectZone" , manifestPattern: 'challenge2_3/kubernetes-deployment.yaml', credentialsId: "$gkeProjectId" , verifyDeployments: false])
 				}
 			} catch(Exception ex) {
