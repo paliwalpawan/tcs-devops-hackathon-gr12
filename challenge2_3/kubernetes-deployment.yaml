@@ -5,8 +5,8 @@ metadata:
 type: docker-registry
 data:
   docker-server: 35.202.21.173:8083
-  docker-username: YWRtaW4=
-  docker-password: YWRtaW4=
+  docker-username: admin
+  docker-password: admin
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
