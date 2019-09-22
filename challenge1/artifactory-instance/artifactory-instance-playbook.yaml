@@ -17,3 +17,5 @@
       nexus_service_destination: /etc/systemd/system/
       start_nexus_script_source: start-nexus.sh
       start_nexus_script_destination: /etc/systemd/system/
+      stop_nexus_script_source: stop-nexus.sh
+      stop_nexus_script_destination: /etc/systemd/system/
