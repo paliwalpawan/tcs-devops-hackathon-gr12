@@ -1,12 +1,15 @@
 apiVersion: v1
+data:
+  .dockerconfigjson: eyJhdXRocyI6eyIzNS4yMDIuMjEuMTczOjgwODMiOnsidXNlcm5hbWUiOiJhZG1pbiIsInBhc3N3b3JkIjoiYWRtaW4tLWRvY2tlci1lbWFpbD1hcmdoeWEuZ25paXRAZ21haWwuY29tIiwiYXV0aCI6IllXUnRhVzQ2WVdSdGFXNHRMV1J2WTJ0bGNpMWxiV0ZwYkQxaGNtZG9lV0V1WjI1cGFYUkFaMjFoYVd3dVkyOXQifX19
 kind: Secret
 metadata:
-  name: regcred
-type: docker-registry
-data:
-  docker-server: 35.202.21.173:8083
-  docker-username: admin
-  docker-password: admin
+  creationTimestamp: "2019-09-22T19:18:34Z"
+  name: regcred1
+  namespace: default
+  resourceVersion: "274817"
+  selfLink: /api/v1/namespaces/default/secrets/regcred1
+  uid: c5b2ebca-dd6d-11e9-a1f6-42010a80019c
+type: kubernetes.io/dockerconfigjson
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
@@ -22,7 +25,7 @@ spec:
         run: eureka-service
     spec:
       imagePullSecrets:
-      - name: regcred
+      - name: regcred1
       containers:
         - name: eureka-server
           image: 35.202.21.173:8083/eureka-server
