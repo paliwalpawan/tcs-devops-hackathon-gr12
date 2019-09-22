@@ -66,12 +66,19 @@ node('master') {
 					if (isUnix()) {
 						
 						// Push Docker Image to nexus repository
+						
 						loginStatus = sh(returnStatus: true, script: 'docker login "${registryHost}":"${registryDockerPort}" -u "${registryUser}" -p "${registryPassword}"')
 						if(loginStatus != 0) {
 							sh "Login to Docker Registry failed"
 							sh "exit 1"
 						}
-						sh 'docker tag "${registryHost}":"${registryDockerPort}"/eureka-server "${registryHost}":"${registryDockerPort}"/eureka-server:"${BUILD_NUMBER}"'
+						
+						tagStatus = sh(returnStatus: true, script: 'docker tag "${registryHost}":"${registryDockerPort}"/eureka-server "${registryHost}":"${registryDockerPort}"/eureka-server:"${BUILD_NUMBER}"')
+						if(tagStatus != 0) {
+							sh "Tagging docker image with BUILD_NUMBER failed"
+							sh "exit 1"
+						}	
+						
 						pushStatus = sh(returnStatus: true, script: 'docker push "${registryHost}":"${registryDockerPort}"/eureka-server:"${BUILD_NUMBER}"')
 						if(pushStatus != 0) {
 							sh "Docker Push failed"
