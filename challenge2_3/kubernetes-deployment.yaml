@@ -11,6 +11,8 @@ spec:
       labels:
         run: eureka-service
     spec:
+      imagePullSecrets:
+      - name: regcred
       containers:
         - name: eureka-server
           image: 35.202.21.173:8083/eureka-server
