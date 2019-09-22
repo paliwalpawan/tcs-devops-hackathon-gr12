@@ -56,3 +56,18 @@
   service: 
     name: jenkins
     state: restarted
+    
+- name : "download kubectl"
+  shell: curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
+- name : "change permission of kubectl file"
+  file: 
+      path: ./kubectl
+      mode: +x
+- name : "move kubectl to /usr/bin"
+  shell: mv kubectl /usr/bin
+- name : "create .kube directory in jenkins user home directory"
+  file:
+      path: /var/lib/jenkins/.kube/
+      state: directory  
+      owner: jenkins 
+      group: jenkins        
